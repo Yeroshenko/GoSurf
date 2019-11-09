@@ -2,7 +2,7 @@
 @import 'libs'
 @import 'interface'
 
-//--header start..//  
+//--header start..//
 
 .header
   position: relative
@@ -47,7 +47,7 @@
     margin-top: 40px
     span
       display: block
-      padding-top: 15px 
+      padding-top: 15px
       font-weight: 300
       font-size: 16px
       line-height: 19px
@@ -76,7 +76,7 @@
     bottom: 30px
     z-index: 3
 
-.menu 
+.menu
   padding-top: 40px
   span
     display: block
@@ -93,7 +93,6 @@
   stroke-dasharray: 600
   animation: animdash 4s infinite 6s
 
-    
 @keyframes animdash
   100%
     stroke-dashoffset: 0
@@ -141,7 +140,7 @@
       .dots-box
         border-top-color: $green
     .slick-track
-      transform: translate3d(0px, 0px, 0px) !important
+      transform: translate3d(0px, 0px, 0px)
 
 .dots-box
   width: 200px
@@ -160,7 +159,238 @@
     line-height: 19px
     text-transform: capitalize
 
-.serf 
-  padding: 160px 0px 210px
+.surf
+  padding: 160px 0px 120px
+  background-image: url('../img/surf-tag.svg')
+  background-position: right 200px
+  background-repeat: no-repeat
+  background-size: auto
+
+  &-subtitle
+    text-align: right
+    padding-right: 80px
+    margin-top: -86px
+
+// <-- world map -->
+
+.slider
+  &-map
+    max-width: 1200px
+    min-height: 635px
+    background-image: url('../img/surf-map/world-map_dots.png')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    margin: 0 auto
+    .slick
+      &-track
+        transform: translate3d(0px, 0px, 0px) !important
+      &-list
+        min-height: 635px
+      &-slide
+        width: $map-circle_size !important
+      &-current
+        .slider-dot__content
+          display: block
+  &-dot
+    outline: none
+    position: relative
+    &__circle
+      width: $map-circle_size
+      height: $map-circle_size
+      background-color: #4AF6CD
+      border-radius: 50%
+
+      // box-shadow: 0px 0px 15px rgba(74, 246, 205, 0.8)
+    &__content
+      display: none
+      width: 285px
+      padding: 30px
+      padding-bottom: 0
+      background: rgba(#0F1010, 0.7)
+      border-radius: 20px
+      position: absolute
+      bottom: 35px
+      transform: translateX(-50%)
+      z-index: 99
+      margin-bottom: 10px
+      &::before
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-bottom: 20px solid $green
+        border-left: 12px solid transparent
+        border-right: 12px solid transparent
+        bottom: -31px
+        left: 49.9%
+        border-radius: 10px
+      &_row
+        display: flex
+        justify-content: space-between
+        padding-bottom: 30px
+      &_title
+        font-weight: 800
+        font-size: 18px
+        line-height: 26px
+        padding-bottom: 8px
+        margin-bottom: 8px
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          background-color: $green
+          width: 80px
+          height: 1px
+          bottom: 0
+          left: 0
+      &_subtitle
+        font-size: 16px
+        line-height: 19px
+        text-transform: capitalize
+      &_link
+        padding-top: 4px
+      &-item
+        text-align: center
+        img
+          margin-bottom: 8px
+      &_number
+        font-weight: 800
+        font-size: 16px
+        line-height: 23px
+      &_name
+        font-weight: 300
+        font-size: 10px
+        line-height: 12px
+    &_first
+      top: 320px
+      left: 0
+      .slider-dot__content
+        transform: translateX(0%)
+        &::before
+          left: -0.5px
+    &_second
+      top: 280px
+      left: 9.5%
+      .slider-dot__circle
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          background-image: url('../img/surf-map/mini-marker.svg')
+          width: 14px
+          height: 17px
+          background-size: cover
+          right: -30px
+          top: -30px
+    &_third
+      top: 320px
+      left: 24%
+    &_fourth
+      top: 486px
+      left: 28%
+    &_fifth
+      top: 208px
+      left: 37%
+      .slider-dot__content
+        margin-bottom: 0
+        margin-left: 10px
+        transform: translateY(calc(50% + 14px))
+        left: 33px
+        
+        &::before
+          transform: rotate(90deg)
+          bottom: 0
+          left: -31px
+          top: 49.9%
+    &_sixth
+      top: 545px
+      left: 43%
+    &_seventh
+      top: 380px
+      left: 57%
+    &_eighth
+      top: 500px
+      left: 77%
+      .slider-dot__content
+        transform: translateX(-262px)
+        &::before
+          left: auto
+          right: 0
+// <-- bottom slider-->
+
+.surf
+  &-slider
+    padding-top: 110px
+    .slider-arrows
+      top: 50px
+      opacity: .25
+    .surf-box
+      &:nth-child(4n + 1)
+        margin-top: 32px
+      &:nth-child(4n + 3)
+        margin-top: 90px
+    .slick-current
+      .surf-box__inner
+        background-color: rgba(#1C2121, .3)
+        &_btn
+          display: block
+
+  &-box
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    outline: none
+
+    &_first
+      background-image: url('../img/surf-slider/malibu.jpg')
+    &_second
+      background-image: url('../img/surf-slider/airlie.png')
+    &_third
+      background-image: url('../img/surf-slider/cloud.png')
+    &_fourth
+      background-image: url('../img/surf-slider/boucau.png')
+    &_fifth
+      background-image: url('../img/surf-slider/malibu.jpg')
+    &_sixth
+      background-image: url('../img/surf-slider/airlie.png')
+    &_seventh
+      background-image: url('../img/surf-slider/cloud.png')
+    &_eighth
+      background-image: url('../img/surf-slider/boucau.png')
+
+    &__inner
+      min-height: 750px
+      background-color: rgba(#1C2121, .85)
+      position: relative
+      transition: .5s all
+      cursor: pointer
+      &_title
+        font-weight: 800
+        font-size: 40px
+        line-height: 36px
+        padding-top: 72px
+        padding-left: 40px
+        max-width: 155px
+      &_location
+        font-size: 18px
+        line-height: 22px
+        letter-spacing: 8px
+        transform: rotate(-90deg)
+        position: absolute
+        left: 40px
+        bottom: 80px
+        width: 0
+        height: 0
+        white-space: nowrap
+        span
+          font-weight: 100
+      &_btn
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        text-align: center
+        display: none
 
 @import 'media'
