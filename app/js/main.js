@@ -18,7 +18,7 @@ $(function () {
   $('.surf-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
     centerMode: true,
     focusOnSelect: true,
@@ -35,4 +35,12 @@ $(function () {
     autoplay: false,
     asNavFor: '.surf-slider'
   });
+
+  $('.travel-slider').slick({
+    infinite: true,
+    fade: true,
+    prevArrow: '<img class="slider-arrows slider-arrows__left"  src="img/arrow-left.svg" alt=""></img>',
+    nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt=""></img>'
+  });
+
 });

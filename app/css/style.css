@@ -3946,9 +3946,11 @@ ul, li {
   margin: 0 auto;
 }
 
-.headline-left {
+.headline-left,
+.headline-right {
   font-size: 22px;
   line-height: 32px;
+  font-weight: normal;
   letter-spacing: 7.33333px;
   opacity: 0.5;
   padding-left: 103px;
@@ -3956,7 +3958,8 @@ ul, li {
   display: inline-block;
 }
 
-.headline-left::before {
+.headline-left::before,
+.headline-right::before {
   content: '';
   position: absolute;
   width: 80px;
@@ -3964,6 +3967,18 @@ ul, li {
   background-color: #fff;
   left: 0;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.headline-right {
+  padding-left: 0;
+  padding-right: 103px;
+}
+
+.headline-right::before {
+  left: auto;
+  right: 0;
 }
 
 .title span {
@@ -4043,6 +4058,36 @@ ul, li {
           transform: translateY(-50%);
 }
 
+.descr {
+  font-weight: 800;
+  font-size: 40px;
+  padding-left: 130px;
+}
+
+.descr-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.descr-head__img {
+  padding-left: 25px;
+}
+
+.surf,
+.travel,
+.sleep,
+.shop {
+  padding: 160px 0px 120px;
+}
+
+.travel {
+  padding-bottom: 265px;
+}
+
 .header {
   position: relative;
   height: 100vh;
@@ -4092,7 +4137,7 @@ ul, li {
   font-weight: 800;
   font-size: 72px;
   line-height: 64px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .header-date span {
@@ -4134,7 +4179,7 @@ ul, li {
 }
 
 .menu {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .menu span {
@@ -4225,8 +4270,8 @@ ul, li {
 }
 
 .slider-dots .slick-track {
-  -webkit-transform: translate3d(0px, 0px, 0px);
-          transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px) !important;
+          transform: translate3d(0px, 0px, 0px) !important;
 }
 
 .dots-box {
@@ -4258,7 +4303,6 @@ ul, li {
 }
 
 .surf {
-  padding: 160px 0px 120px;
   background-image: url("../img/surf-tag.svg");
   background-position: right 200px;
   background-repeat: no-repeat;
@@ -4330,7 +4374,7 @@ ul, li {
   position: absolute;
   width: 0;
   height: 0;
-  border-bottom: 20px solid #4AF6CD;
+  border-bottom: 25px solid #4AF6CD;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
   bottom: -31px;
@@ -4377,11 +4421,12 @@ ul, li {
   padding-top: 4px;
 }
 
-.slider-dot__content-item {
+.slider-dot__content_item {
   text-align: center;
 }
 
-.slider-dot__content-item img {
+.slider-dot__content_item img {
+  margin: 0 auto;
   margin-bottom: 8px;
 }
 
@@ -4442,24 +4487,8 @@ ul, li {
 }
 
 .slider-dot_fifth {
-  top: 208px;
-  left: 37%;
-}
-
-.slider-dot_fifth .slider-dot__content {
-  margin-bottom: 0;
-  margin-left: 10px;
-  -webkit-transform: translateY(calc(50% + 14px));
-          transform: translateY(calc(50% + 14px));
-  left: 33px;
-}
-
-.slider-dot_fifth .slider-dot__content::before {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  bottom: 0;
-  left: -31px;
-  top: 49.9%;
+  top: 256px;
+  left: 36%;
 }
 
 .slider-dot_sixth {
@@ -4485,38 +4514,6 @@ ul, li {
 .slider-dot_eighth .slider-dot__content::before {
   left: auto;
   right: 0;
-}
-
-.surf-slider {
-  padding-top: 110px;
-}
-
-.surf-slider .slider-arrows {
-  top: 50px;
-  opacity: .25;
-}
-
-.surf-slider .surf-box:nth-child(4n + 1) {
-  margin-top: 32px;
-}
-
-.surf-slider .surf-box:nth-child(4n + 3) {
-  margin-top: 90px;
-}
-
-.surf-slider .slick-current .surf-box__inner {
-  background-color: rgba(28, 33, 33, 0.3);
-}
-
-.surf-slider .slick-current .surf-box__inner_btn {
-  display: block;
-}
-
-.surf-box {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  outline: none;
 }
 
 .surf-box_first {
@@ -4551,6 +4548,38 @@ ul, li {
   background-image: url("../img/surf-slider/boucau.png");
 }
 
+.surf-slider {
+  padding-top: 110px;
+}
+
+.surf-slider .slider-arrows {
+  top: 50px;
+  opacity: .25;
+}
+
+.surf-slider .surf-box:nth-child(4n + 1) {
+  margin-top: 32px;
+}
+
+.surf-slider .surf-box:nth-child(4n + 3) {
+  margin-top: 90px;
+}
+
+.surf-slider .slick-current .surf-box__inner {
+  background-color: rgba(28, 33, 33, 0.3);
+}
+
+.surf-slider .slick-current .surf-box__inner_btn {
+  display: block;
+}
+
+.surf-box {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  outline: none;
+}
+
 .surf-box__inner {
   min-height: 750px;
   background-color: rgba(28, 33, 33, 0.85);
@@ -4573,13 +4602,14 @@ ul, li {
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 8px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
   position: absolute;
   left: 40px;
   bottom: 80px;
-  width: 0;
-  height: 0;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   white-space: nowrap;
 }
 
@@ -4594,4 +4624,158 @@ ul, li {
   right: 0;
   text-align: center;
   display: none;
+}
+
+.travel-slide_first {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_second {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_third {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_fourth {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_fifth {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_sixth {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_seventh {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.travel-slide_eighth {
+  background-image: url("../img/travel/australia-bg.png");
+}
+
+.descr_first {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_second {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_third {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_fourth {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_fifth {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_sixth {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_seventh {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.descr_eighth {
+  background-image: url("../img/travel/airplane-virgin.png");
+}
+
+.travel {
+  background-image: url("../img/travel/cocktail-bg.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.travel-slider .slider-arrows {
+  opacity: .25;
+  top: 240px;
+}
+
+.travel-slider__item {
+  outline: none;
+}
+
+.travel-slider__item_head {
+  background-repeat: no-repeat;
+  background-position: top left;
+  min-height: 780px;
+}
+
+.travel-slider__item_descr {
+  margin-top: -230px;
+}
+
+.travel-slider__item_descr .descr {
+  padding-top: 190px;
+  padding-bottom: 120px;
+  min-height: 377px;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.travel-slider__item_subtitle {
+  text-align: right;
+  padding-right: 85px;
+  padding-top: 132px;
+}
+
+.travel-slider__item_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.travel-slider__item_info-box {
+  min-height: 200px;
+  margin-bottom: 65px;
+  position: relative;
+}
+
+.travel-slider__item_info-subtitle {
+  position: absolute;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 8px;
+  opacity: 0.5;
+  margin-top: -5px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+.travel-slider__item_info-title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 36px;
+  padding-left: 40px;
+  max-width: 282px;
+}
+
+.travel-slider__item_info-title span {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 36px;
+  letter-spacing: 5.25px;
+  display: block;
+  text-align: right;
+  opacity: 0.75;
+}
+
+.travel-slider__item_btn {
+  text-align: center;
 }

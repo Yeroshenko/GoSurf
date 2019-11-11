@@ -28,24 +28,32 @@ ul, li
   max-width: 1920px
   margin: 0 auto
 
+.headline-left,
+.headline-right
+  font-size: 22px
+  line-height: 32px
+  font-weight: normal
+  letter-spacing: 7.33333px
+  opacity: 0.5
+  padding-left: 103px
+  position: relative
+  display: inline-block
+  &::before
+    content: ''
+    position: absolute
+    width: 80px
+    height: 1px
+    background-color: #fff
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
 .headline
-  &-left
-    font-size: 22px
-    line-height: 32px
-    letter-spacing: 7.33333px
-    opacity: 0.5
-    padding-left: 103px
-    position: relative
-    display: inline-block
+  &-right
+    padding-left: 0
+    padding-right: 103px
     &::before
-      content: ''
-      position: absolute
-      width: 80px
-      height: 1px
-      background-color: #fff
-      left: 0
-      top: 50%
-
+      left: auto
+      right: 0
 .title
   span
     font-weight: 800
@@ -84,7 +92,7 @@ ul, li
   font-size: 40px
   line-height: 36px
   span
-    padding: 17px 
+    padding: 17px
     padding-right: 57px
     background-color: $green
     display: inline-block
@@ -96,7 +104,7 @@ ul, li
       width: 20px
       height: 1px
       background-color: #fff
-      top: 50% 
+      top: 50%
       left: -10px
     &::after
       content: ''
@@ -104,6 +112,25 @@ ul, li
       width: 25px
       height: 21px
       background-image: url('../img/arrow-right.svg')
-      top: 50%  
+      top: 50%
       right: 17px
       transform: translateY(-50%)
+
+.descr
+  font-weight: 800
+  font-size: 40px
+  padding-left: 130px
+  &-head
+    display: flex
+    align-items: center
+    &__img
+      padding-left: 25px
+
+.surf,
+.travel,
+.sleep,
+.shop
+  padding: 160px 0px 120px
+
+.travel
+  padding-bottom: 265px
